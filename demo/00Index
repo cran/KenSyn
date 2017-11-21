@@ -1,0 +1,5 @@
+ch01_mixedmodel_nlme                  ch01. Simple mixed-effects model example on wheat yield with nlme and lme4
+ch03_network_compblock                ch03. Network of experiments : complete blocks. Wheat varieties on a single year
+others_network_machines               Others. Network of experiments : complete blocks. Test of worker performance on machine
+ch06_metaanalysis_organic             ch06. Meta-analysis comparing organic vs conventional cropping system with nlme and metafor
+ch06_metaanalysis_metareg             ch06. Meta-analysis : code for illustrating the main principles of meta-regression with nlme and metafor
