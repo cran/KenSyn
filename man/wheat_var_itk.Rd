@@ -6,7 +6,8 @@
 \title{Network of experiment to evaluate Wheat varieties on one single year}
 \format{a \code{RangedData} instance, 1 row per measurement. annee : year, lieu : place, experimentation : experiment name, variete : variety, bloc : block of the design, rdt : Wheat Yield (ton/hectare)}
 \source{
-Arvalis - institut du vegetal, INRA, Chambres Agricultures et CIVAM, real data, but anonymized (place and variety). Description of complete database : Félix et al. (2016)
+Arvalis - institut du vegetal, INRA, Chambres Agricultures et CIVAM, real data, but anonymized (place and variety). 
+Description of complete database : Felix et al. (2016)
 }
 \usage{
 wheat_var_itk

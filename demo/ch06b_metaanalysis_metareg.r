@@ -1,8 +1,9 @@
-# kensyn Package. Knowledge synthesis in Agriculture : from experimental network to meta-analyisis.
-# ch06. Meta-analysis : code for illustrating the main principles of meta-regression with nlme and metafor
+# kensyn Package. Knowledge synthesis in Agriculture: from experimental network to meta-analyisis.
+# ch06. Meta-analysis: code for illustrating the main principles of meta-regression with nlme and metafor
 # David Makowski (INRA) 2017-11-01
 library(nlme)
 library(metafor)
+library(KenSyn)
 
 # fictive dataset
 TAB<-data.frame(
@@ -21,16 +22,16 @@ for (i in 1:8) {
 lines(c(TAB$Ratio[i]-1.96*TAB$sdRatio[i], TAB$Ratio[i]+1.96*TAB$sdRatio[i]), c(i,i))		
 }
 axis(1,at=seq(0.2, 1.3, by=0.1))
-title("A.                                    ")
+title("A.", adj=0)
 precision<-0.1/TAB$sdRatio
 plot(TAB$X1, TAB$Ratio, cex=precision,xlab="X1", ylab="Individual effect size",ylim=c(0.5,1))
-title("B.                                    ")
+title("B.", adj=0)
 plot(TAB$X2, TAB$Ratio, cex=precision,xlab="X2", ylab="Individual effect size", xlim=c(-0.5,1.5), axes=F, col=(TAB$X2+1))
 axis(1, at=c(0,1), labels=c(0,1))
 axis(2, at=seq(0.5,1,by=0.1), labels=seq(0.5,1,by=0.1))
-title("C.                                    ")
+title("C.", adj=0)
 plot(TAB$X1, TAB$Ratio, cex=precision,xlab="X1", ylab="Individual effect size",col=(TAB$X2+1),ylim=c(0.5,1))
-title("D.                                    ")
+title("D.", adj=0)
 
 # Heterogeneity
 
@@ -60,17 +61,17 @@ summary(mod3)
 par(mfrow=c(2,2))
 plot(TAB$X1, TAB$Ratio, cex=precision,xlab="X1", ylab="Individual effect size",ylim=c(0.5,1),col=(TAB$X2+1))
 lines(-100:100, coef(mod1)[1]+coef(mod1)[2]*(-100:100))
-title("A.                                    ")
+title("A.", adj=0)
 plot(TAB$X2, TAB$Ratio, cex=precision,xlab="X2", ylab="Individual effect size", xlim=c(-0.5,1.5), axes=F, col=(TAB$X2+1))
 axis(1, at=c(0,1), labels=c(0,1))
 axis(2, at=seq(0.5,1,by=0.1), labels=seq(0.5,1,by=0.1))
-title("B.                                    ")
+title("B.", adj=0)
 points(0,coef(mod2)[1], pch=19, col="blue")
 points(1, coef(mod2)[1]+coef(mod2)[2], pch=19, col="blue")
 print(coef(mod2)[1])
 print(coef(mod2)[1]+coef(mod2)[2])
 plot(TAB$X1, TAB$Ratio, cex=precision,xlab="X1", ylab="Individual effect size",col=(TAB$X2+1),ylim=c(0.5,1))
-title("C.                                    ")
+title("C.", adj=0)
 lines(-100:100, coef(mod3)[1]+coef(mod3)[2]*(-100:100))
 lines(-100:100, coef(mod3)[1]+coef(mod3)[2]*(-100:100)+coef(mod3)[3],col="red")
 
@@ -101,7 +102,7 @@ summary(mod3RE)
 plot(TAB$X2, TAB$Ratio, cex=precision,xlab="X2", ylab="Individual effect size", xlim=c(-0.5,1.5), axes=F, col=(TAB$X2+1))
 axis(1, at=c(0,1), labels=c(0,1))
 axis(2, at=seq(0.5,1,by=0.1), labels=seq(0.5,1,by=0.1))
-title("D.                                    ")
+title("D.", adj=0)
 points(0,mod2RE$coefficients$fixed[1], pch=19, col="blue")
 points(1, mod2RE$coefficients$fixed[1]+mod2RE$coefficients$fixed[2], pch=19, col="blue")
 print(mod2RE$coefficients$fixed[1])

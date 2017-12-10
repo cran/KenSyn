@@ -1,8 +1,8 @@
-# kensyn Package. Knowledge synthesis in Agriculture : from experimental network to meta-analyisis.
+# kensyn Package. Knowledge synthesis in Agriculture: from experimental network to meta-analyisis.
 # ch01. Simple mixed-effects model example on wheat yield with nlme and lme4
 # David Makowski (INRA) 2017-09-12
 library(nlme)
-
+library(KenSyn)
 # Load wheat yield data
 #data(wheatyield, envir = environment())
 TAB<-wheatyield

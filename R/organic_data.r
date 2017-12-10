@@ -1,5 +1,5 @@
 #' @name organic
-#' @title Meta-analysis dataset on comparison of organic to conventional crop systems.
+#' @title Meta-analysis dataset on comparison of organic to conventional crop systems
 #' @description
 #' The data set consists of the data collected from litterature for a meta-analysis 
 #' to compare crop yield in organic system to conventionnal system conducted by Seufert et al (2012).

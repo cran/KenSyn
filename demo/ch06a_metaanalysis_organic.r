@@ -1,8 +1,9 @@
-# kensyn Package. Knowledge synthesis in Agriculture : from experimental network to meta-analyisis.
-# ch06. Meta-analysis comparing organic vs conventional cropping system with nlme and metafor
+# kensyn Package. Knowledge synthesis in Agriculture: from experimental network to meta-analyisis.
+# ch06. Meta-analysis: mean size effect - comparing organic vs conventional cropping system with nlme and metafor
 # David Makowski (INRA) 2017-11-01
 library(nlme)
 library(metafor)
+library(KenSyn)
 
 TAB<-organic
 
@@ -21,6 +22,7 @@ for (i in 1:length(TAB$lnR)) {
 abline(v=0)
 
 ######################################################################################### 
+# Heterogeneity test
 # Calculating vectors of weights and log ratios
 w<-1/TAB$Var_lnR
 L<-TAB$lnR
@@ -31,6 +33,7 @@ Q<-sum(w*(L)^2)-((sum(w*L))^2)/sum(w)
 1-pchisq(Q,length(L)-1)
 
 ######################################################################################### 
+# Calculation of the mean effect size (MES)
 # Matrix storing results
 Result<-matrix(nrow=6,ncol=3)
 
@@ -58,7 +61,7 @@ Result[1,]<-c(exp(MEF),R_lb,R_ub)
 
 ######################################################################################### 
 # random effect on study - weighting
-##### Method of Dersimonian and Lairdd##### 
+# Method of Dersimonian and Laird
 # Estimation of inter-study variance
 Vb<-(Q-(length(L)-1))/(sum(w)-(sum(w^2)/sum(w)))
 # Calculation of weights
@@ -85,16 +88,6 @@ Result[2,]<-c(exp(MEF),R_lb,R_ub)
 #The observed variable is lnR and the data is grouped according to the variable Study
 Data<-groupedData(lnR~1|Study, data=TAB)
 
-# with the lme function of the package nlme
-# Parameter estimation with lme - random effect, weighting
-Fit<-lme(lnR~1, random = ~ 1, data=Data, weight= varFixed(~Var_lnR),
-         method="REML")
-summary(Fit)
-# Estimated ratio and confidence interval (95percent)
-R<-exp(Fit$coefficients$fixed)
-R_lb<-exp(Fit$coefficients$fixed-1.96*sqrt(Fit$varFix))
-R_ub<-exp(Fit$coefficients$fixed+1.96*sqrt(Fit$varFix))
-Result[3,]<-c(R,R_lb,R_ub)
 
 # Using rma function of the package metafor - random effect, weighting
 Fit<-rma(yi=Data$lnR, vi=Data$Var_lnR, method="DL")
@@ -102,13 +95,35 @@ summary(Fit)
 R<-exp(Fit$b)
 R_lb<-exp(Fit$ci.lb)
 R_ub<-exp(Fit$ci.ub)
-Result[4,]<- c(R,R_lb,R_ub)
+Result[3,]<- c(R,R_lb,R_ub)
 
 ########################################################################################
 # Random effect on study, weighting
 # Data format
 Data<-groupedData(lnR~1|Study, data=TAB)
 
+# with the lme function of the package nlme
+# Parameter estimation with lme - random effect, weighting
+Fit<-lme(lnR~1, random = ~ 1, data=Data, weight= varFixed(~Var_lnR),
+method="REML")
+#control=lmeControl(sigma=1))summary(Fit)
+# Estimated ratio and confidence interval (95percent)
+R<-exp(Fit$coefficients$fixed)
+R_lb<-exp(Fit$coefficients$fixed-1.96*sqrt(Fit$varFix))
+R_ub<-exp(Fit$coefficients$fixed+1.96*sqrt(Fit$varFix))
+Result[4,]<-c(R,R_lb,R_ub)
+
+
+# Random effect on study, weighting - package metafor 
+
+Fit<-rma(yi=Data$lnR, vi=Data$Var_lnR, method="REML")
+summary(Fit)
+R<-exp(Fit$b)
+R_lb<-exp(Fit$ci.lb)
+R_ub<-exp(Fit$ci.ub)
+Result[5,]<-c(R,R_lb,R_ub)
+
+########################################################################################
 # Random effect on study, no weighting - package nlme
 Fit<-lme(lnR~1, random = ~ 1, data=Data, method="REML")
 summary(Fit)
@@ -116,15 +131,10 @@ summary(Fit)
 R<-exp(Fit$coefficients$fixed)
 R_lb<-exp(Fit$coefficients$fixed-1.96*sqrt(Fit$varFix))
 R_ub<-exp(Fit$coefficients$fixed+1.96*sqrt(Fit$varFix))
-Result[5,]<-c(R,R_lb,R_ub)
-
-# Random effect on study, weighting - package metafor 
-Fit<-rma(yi=Data$lnR, vi=Data$Var_lnR, method="REML")
-summary(Fit)
-R<-exp(Fit$b)
-R_lb<-exp(Fit$ci.lb)
-R_ub<-exp(Fit$ci.ub)
 Result[6,]<-c(R,R_lb,R_ub)
+
+
+
 
 # Results
 Result<-as.data.frame(Result)
@@ -139,8 +149,9 @@ lines(c(Result$LowerBound[4],Result$UpperBound[4]),c(4,4))
 lines(c(Result$LowerBound[5],Result$UpperBound[5]),c(5,5))
 lines(c(Result$LowerBound[6],Result$UpperBound[6]),c(6,6))
 text(c(0.65,0.65,0.65,0.65,0.65,0.65), c(1,2,3,4,5,6),
- c("Fixed effect", "RE DL", "RE REML lme" ,"RE DL metafor", "RE REML lme no weight",
-   "RE REML metafor"), cex=0.5)
+c("Fixed effect", "RE DL" ,"RE DL metafor","RE REML lme",
+"RE REML metafor","RE REML lme no weight"),
+cex=0.5)
 
 #########################################################################################
 # Evaluation of results
@@ -152,7 +163,7 @@ abline(v=Fit$coefficients$fixed)
 LRnorm<-LogRatio*Precision
 summary(lm(LRnorm~Precision))
 
-# Forest plot
+# Forest plot with metafor
 Fit<-rma(yi=Data$lnR, vi=Data$Var_lnR, method="REML")
 forest(Fit)
 
@@ -213,10 +224,11 @@ Result[2,]<-c(R,R_lb,R_ub)
 # Results
 Result<-as.data.frame(Result)
 names(Result)<-c("Estimate","LowerBound", "UpperBound")
+rownames(Result) = c("DerSimonian and Laird", "Random effect on study, weighting")
 Result
 
-plot(Result$Estimate[1:2], 1:2, xlab="Ratio", ylab="Method", xlim=c(0.6,1))
+plot(Result$Estimate[1:2], 1:2, xlab="Ratio", ylab="Method", xlim=c(0.5,1), yaxt="n")
 lines(c(Result$LowerBound[1],Result$UpperBound[1]),c(1,1))
 lines(c(Result$LowerBound[2],Result$UpperBound[2]),c(2,2))
-
+text(0.9,1:2,rownames(Result))
 # end of file

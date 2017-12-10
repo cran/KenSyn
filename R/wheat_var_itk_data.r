@@ -11,7 +11,8 @@
 #' @docType data
 #' @usage wheat_var_itk
 #' @format a \code{RangedData} instance, 1 row per measurement. annee : year, lieu : place, experimentation : experiment name, variete : variety, bloc : block of the design, rdt : Wheat Yield (ton/hectare)
-#' @source Arvalis - institut du vegetal, INRA, Chambres Agricultures et CIVAM, real data, but anonymized (place and variety). Description of complete database : Félix et al. (2016)
+#' @source Arvalis - institut du vegetal, INRA, Chambres Agricultures et CIVAM, real data, but anonymized (place and variety). 
+#' Description of complete database : Felix et al. (2016)
 #' @examples
 #' summary(wheat_var_itk)
 NULL
