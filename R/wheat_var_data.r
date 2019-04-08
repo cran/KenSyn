@@ -1,5 +1,5 @@
 #' @name wheat_var
-#' @title Network of experiment to evaluate Wheat varieties on one single year
+#' @title Network of experiment to evaluate Wheat varieties on one single year.
 #' @description
 #' The data set consists of measurements of wheat yields from a network of field experiments
 #' designed to evaluate and compare performances of 10 different varieties (v1 to v10).

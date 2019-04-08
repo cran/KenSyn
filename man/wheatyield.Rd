@@ -3,7 +3,7 @@
 \docType{data}
 \name{wheatyield}
 \alias{wheatyield}
-\title{Wheat Yield at a regional scale (fake data)}
+\title{Wheat Yield at a regional scale (fake data).}
 \format{a \code{RangedData} instance, 1 row per measurement. Site : experimental site, Rdt : Wheat Yield (ton/hectare)}
 \source{
 fake data

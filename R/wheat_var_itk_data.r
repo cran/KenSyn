@@ -1,5 +1,5 @@
 #' @name wheat_var_itk
-#' @title Network of experiment to evaluate Wheat varieties on one single year
+#' @title Network of experiment to evaluate Wheat varieties on one single year with different cropping systems.
 #' @description
 #' The data set consists of measurements of wheat yields from a network of field experiments with different cropping systems
 #' designed to evaluate and compare performances of different varieties or varietal mixtures.

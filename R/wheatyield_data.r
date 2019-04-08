@@ -1,5 +1,5 @@
 #' @name wheatyield
-#' @title Wheat Yield at a regional scale (fake data)
+#' @title Wheat Yield at a regional scale (fake data).
 #' @description
 #' Wheat yield.
 #' The data set consists of 45 measurements of wheat yields from 15 experimental sites (one year) in a fictive agricultural region.

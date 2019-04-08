@@ -3,7 +3,7 @@
 \docType{data}
 \name{citrus}
 \alias{citrus}
-\title{Meta-analysis dataset: estimation the effectiveness of a fungicidal treatment to control Phyllosticta citricarpa, a citrus fungus}
+\title{Meta-analysis dataset: estimation the effectiveness of a fungicidal treatment to control Phyllosticta citricarpa, a citrus fungus.}
 \format{a \code{RangedData} instance, 1 row per measurement. NbFruits : number of fruits observed, NbDiseasedF : number of diseased fruits, Code : code of the experiment, Fung_Gp : treatment (1: fungicid, 0: control)}
 \source{
 Makowski D., Vicent A., Pautasso M., Stancanelli G., Rafoss T. 2014. Comparison of

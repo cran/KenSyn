@@ -3,7 +3,7 @@
 \docType{data}
 \name{wheat_var_years}
 \alias{wheat_var_years}
-\title{Network of experiment to evaluate Wheat varieties on several years (2005-2010)}
+\title{Network of experiment to evaluate Wheat varieties on several years (2005-2010).}
 \format{a \code{RangedData} instance, 1 row per measurement. 
 rendement: Wheat Yield (ton/hectare), variete: variety, experimentation: experiment name, lieu: place, annee: year, Vmoyj:???}
 \source{

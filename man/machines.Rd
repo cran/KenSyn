@@ -3,7 +3,7 @@
 \docType{data}
 \name{machines}
 \alias{machines}
-\title{Workers testing a new machine}
+\title{Workers testing a new machine.}
 \format{a \code{RangedData} instance, 1 row per measurement. Worker (1 to 6), Machine (A or B), score2 : performance of the worker on the machine}
 \source{
 TODO F. PIRAUX ?

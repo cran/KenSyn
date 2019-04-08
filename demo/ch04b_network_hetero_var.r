@@ -2,11 +2,11 @@
 # ch04b. Network of experiments: Wheat varieties on on year. Heterogeneous variances
 # Francois Piraux (Arvalis) 2017-11-30
 # chargement des packages
-library(lme4) # version 1.1-10
+library(lme4) # version 1.1-14
 library(emmeans)   # required : pbkrtest, lmerTest, multcompView
-library(car) # version 2.0-25
+library(car) # version 2.1-6
 library(outliers) # Version: 0.14
-library(metafor) # Version : 1.9-7
+library(metafor) # Version : 2.0-0
 library(KenSyn)
 
 #### loading data

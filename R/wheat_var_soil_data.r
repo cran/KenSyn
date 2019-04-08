@@ -1,5 +1,5 @@
 #' @name wheat_var_soil
-#' @title Network of experiment to evaluate Wheat varieties on two contrasted soils
+#' @title Network of experiment to evaluate Wheat varieties on two contrasted soils.
 #' @description
 #' The data set consists of measurements of wheat yields from a network of field experiments
 #' designed to evaluate and compare performances of different varieties or varietal mixtures.

@@ -1,5 +1,5 @@
 #' @name N2O
-#' @title Meta-analysis dataset to estimate the response of N2O emissions to the applied N fertilizer rate
+#' @title Meta-analysis dataset to estimate the response of N2O emissions to the applied N fertilizer rate.
 #' @description
 #' The data set consists of the data collected from litterature for a meta-analysis to estimate
 #' the response of N2O emissions (a greenhouse gas produced largely by agricultural activities,

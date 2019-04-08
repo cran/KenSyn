@@ -1,8 +1,7 @@
 # kensyn Package. Knowledge synthesis in Agriculture: from experimental network to meta-analyisis.
-# ch06. Meta-analysis: code for illustrating the main principles of meta-regression with nlme and metafor
-# David Makowski (INRA) 2017-11-01
+# ch06. Meta-analysis: code for illustrating the main principles of meta-regression with nlme
+# David Makowski (INRA) 2019-01-30
 library(nlme)
-library(metafor)
 library(KenSyn)
 
 # fictive dataset
@@ -108,15 +107,5 @@ points(1, mod2RE$coefficients$fixed[1]+mod2RE$coefficients$fixed[2], pch=19, col
 print(mod2RE$coefficients$fixed[1])
 print(mod2RE$coefficients$fixed[1]+mod2RE$coefficients$fixed[2])
 
-# Random-effects models with package metafor
-mod1rma<-rma(yi=Y, vi=V, mods=~X1,method="REML")
-summary(mod1rma)
-
-# shown in chapter
-mod2rma<-rma(yi=Y, vi=V, mods=~factor(X2),method="REML")
-summary(mod2rma)
-
-mod3rma<-rma(yi=Y, vi=V, mods=~X1+factor(X2),method="REML")
-summary(mod3rma)
 
 # end of file

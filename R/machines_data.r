@@ -1,5 +1,5 @@
 #' @name machines
-#' @title Workers testing a new machine
+#' @title Workers testing a new machine.
 #' @description
 #' The data set consists of measurements of performance of 6 workers on two differents machines A and B
 #' The number of repetitions in each experiment is equal to three.

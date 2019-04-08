@@ -3,7 +3,7 @@
 \docType{data}
 \name{wheat_var_itk}
 \alias{wheat_var_itk}
-\title{Network of experiment to evaluate Wheat varieties on one single year}
+\title{Network of experiment to evaluate Wheat varieties on one single year with different cropping systems.}
 \format{a \code{RangedData} instance, 1 row per measurement. annee : year, lieu : place, experimentation : experiment name, variete : variety, bloc : block of the design, rdt : Wheat Yield (ton/hectare)}
 \source{
 Arvalis - institut du vegetal, INRA, Chambres Agricultures et CIVAM, real data, but anonymized (place and variety). 

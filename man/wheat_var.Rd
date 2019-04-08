@@ -3,7 +3,7 @@
 \docType{data}
 \name{wheat_var}
 \alias{wheat_var}
-\title{Network of experiment to evaluate Wheat varieties on one single year}
+\title{Network of experiment to evaluate Wheat varieties on one single year.}
 \format{a \code{RangedData} instance, 1 row per measurement. experimentation : experiment name, variete : variety, bloc : block of the design, rendement : Wheat Yield (ton/hectare)}
 \source{
 Arvalis - institut du vegetal, real data, but anonymized (place and variety)

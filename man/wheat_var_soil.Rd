@@ -3,7 +3,7 @@
 \docType{data}
 \name{wheat_var_soil}
 \alias{wheat_var_soil}
-\title{Network of experiment to evaluate Wheat varieties on two contrasted soils}
+\title{Network of experiment to evaluate Wheat varieties on two contrasted soils.}
 \format{a \code{RangedData} instance, 1 row per measurement. 
 variete: variety, experimentation:experiment, rendement:Wheat Yield (ton/hectare), MSE:, ddl: ,n_blocs:number of repetition       sol}
 \source{

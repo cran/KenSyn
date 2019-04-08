@@ -1,5 +1,5 @@
 #' @name citrus
-#' @title Meta-analysis dataset: estimation the effectiveness of a fungicidal treatment to control Phyllosticta citricarpa, a citrus fungus
+#' @title Meta-analysis dataset: estimation the effectiveness of a fungicidal treatment to control Phyllosticta citricarpa, a citrus fungus.
 #' @description
 #' The data set consists of the data collected from litterature for a meta-analysis.
 #' It contains the results of 16 trials conducted in different orchards located in different

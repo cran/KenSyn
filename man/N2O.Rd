@@ -3,7 +3,7 @@
 \docType{data}
 \name{N2O}
 \alias{N2O}
-\title{Meta-analysis dataset to estimate the response of N2O emissions to the applied N fertilizer rate}
+\title{Meta-analysis dataset to estimate the response of N2O emissions to the applied N fertilizer rate.}
 \format{a \code{RangedData} instance, 1 row per measurement.
 Type: , Ref_num: , Climate: , Texture_class: , Tex_act: , Carbon_content: , Nitrogen_content: ,
 pH: , CEC: , Bulk_density: , Drainage: , Annual_Precipitation: , Mean_annual_temp: ,

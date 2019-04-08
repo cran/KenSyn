@@ -3,7 +3,7 @@
 \docType{data}
 \name{organic}
 \alias{organic}
-\title{Meta-analysis dataset on comparison of organic to conventional crop systems}
+\title{Meta-analysis dataset on comparison of organic to conventional crop systems.}
 \format{a \code{RangedData} instance, 1 row per measurement. Study, Crop_species, Country, Y_coord, X_coord, Continent, Developed, Development, Latitude, Crop_type, Perennial, Legume, Org_N_input, Conv_N_input, Org_fertilizer_type, Green_manure_org, Animal_manure_org, Irrigation, Moisture, Soil_carbon, Soil_pH, Yield_conv, SD_conv, N_conv, Yield_org, SD_org, N_org, Yield_unit, lnR, Var_lnR}
 \source{
 Seufert et al (2012), real data extracted from published papers
